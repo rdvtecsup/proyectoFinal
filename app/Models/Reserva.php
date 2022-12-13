@@ -15,4 +15,7 @@ class Reserva extends Eloquent
     public function User(){
         return $this->belongsTo(User::class);
     }
+    public function Product(){
+        return $this->belongsTo(Product::class);
+    }
 }

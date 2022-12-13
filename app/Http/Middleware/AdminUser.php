@@ -20,7 +20,7 @@ class AdminUser
         if (Auth::user()->name === "Administrador") {
             return $next($request);
         } else {
-            return redirect('/admin');
+            return redirect()->back();
         }
 
     }

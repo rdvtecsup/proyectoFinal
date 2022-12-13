@@ -10,7 +10,11 @@ class ReservaController extends Controller
     
     public function index()
     {
-        return view('/reservas');
+        $reserva = Reserva::all();
+        return view('/reservas',compact('reservas'));
+    }
+    public function ir_reservar(){
+        return view('');
     }
     public function reservar(Request $request)
     {
@@ -22,7 +26,6 @@ class ReservaController extends Controller
                 'fecha' => $request->fecha,
             ])
         );
-
-        return redirect('/reservas');
+        return view('reservas',compact('reservar'))->with('reservar');
     }
 }

@@ -25,6 +25,7 @@
     <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('css/style.css') }} " rel="stylesheet">
+    @vite(['resources/js/app.js'])
 </head>
 
 <body>
@@ -50,8 +51,8 @@
         <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
             <div class="col-lg-4">
                 <a href="" class="text-decoration-none">
-                    <span class="h1 text-uppercase text-primary bg-dark px-2">G</span>
-                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">L</span>
+                    <span class="h1 text-uppercase text-primary bg-dark px-2">Rings</span>
+                    <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">AQP</span>
                 </a>
             </div>
             <div class="col-lg-4 col-6 text-left">
@@ -59,7 +60,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for products">
                         <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
+                            <span type="submit" class="input-group-text bg-transparent text-primary">
                                 <i class="fa fa-search"></i>
                             </span>
                         </div>
@@ -120,6 +121,7 @@
                                 {{ Auth::user()->email }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('panel')}}">Panel</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                                     document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}

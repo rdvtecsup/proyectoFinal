@@ -7,7 +7,7 @@
         <div class="col-md-7">
             <div class="contenedor_datos card md-6" style="width: 50rem;">
                 <div class="carta card-header" >
-                    Clientes 
+                    Reservas 
                 </div>
                 <div class="contenedor_datos md-4 p-4">
                     <table class="contenedor_datos table align-middle">

@@ -21,31 +21,13 @@ class ProductController extends Controller
         $products = Product::All();
         return view('productos', compact('products'));
     }
-    public function store(Request $request){
-        $product = new Product();
-        $product-> tipo = $request->get('tipo');
-        $product-> codigo = $request->get('codigo');
-        $product-> material = $request->get('material');
-        $product-> medida = $request->get('medida');
-        $product->save();
-        return redirect('productos')->with('sucess', 'Producto añadido');
+    public function search_product(Request $request){
+        $query = Product::query();
+        if ($search = $request->input('search')){
+            $query->where('tipo', 'regexp', "/$search/")
+                ->orWhere('material', 'regexp', "/$search/");
+        }
+        return $query->get();
     }
-    public function edit(Request $request,$id){
-        $product = Product::find($id);
-        return view('product_edit', compact('product','id'));
-    }
-    public function update(Request $request, $id){
-        $product = Product::find($id);
-        $product-> tipo = $request->get('tipo');
-        $product-> codigo = $request->get('codigo');
-        $product-> material = $request->get('material');
-        $product-> medida = $request->get('medida');
-        $product->save();
-        return redirect('productos')->with('sucess', 'Producto modificado correctamente.');
-    }
-    public function destroy($id){
-        $product = Product::find($id);
-        $product->delete();
-        return redirect('productos')->with('sucess','Producto eliminado correctamente');
-    }
+    
 }

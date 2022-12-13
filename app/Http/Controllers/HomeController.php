@@ -29,7 +29,11 @@ class HomeController extends Controller
     }
     public function contacto()
     {
-        $users = User::All();
+        // $users = User::All();
         return view('/contacto');
+    }
+    public function prueba()
+    {
+        return view('/home');
     }
 }

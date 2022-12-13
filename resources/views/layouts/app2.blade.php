@@ -23,7 +23,7 @@
   <div id="app">
   <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{{ route('fotos') }}"></a>
+      <a class="navbar-brand" href="">RingsAQP - Panel de administrador</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark" aria-controls="offcanvasNavbarDark">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,10 +35,16 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ route('fotos') }}"></a>
+              <a class="nav-link" aria-current="page" href="{{route('lista_contactos')}}">Clientes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('home') }}">Inicio</a>
+              <a class="nav-link" aria-current="page" href="{{route('lista_productos')}}">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{{route('lista_reservas')}}">Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('home') }}"></a>
             </li>
             <li class="nav-item dropdown">
               <ul class="navbar-nav ms-auto">
@@ -62,6 +68,7 @@
                     {{ Auth::user()->email }}
                   </a>
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('home') }}">Inicio</a>
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                       {{ __('Logout') }}

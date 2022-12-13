@@ -11,10 +11,14 @@ class Product extends Eloquent
     protected $fillable = [
         'tipo',
         'codigo',
+        'imagen',
         'material',
         'medida',
     ];
     public function Inventario(){
         return $this->embedsMany(Inventario::class);
+    }
+    public function Reserva(){
+        return $this->embedsMany(Reserva::class);
     }
 }
